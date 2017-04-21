@@ -2,7 +2,6 @@ __author__ = 'BorisMirage'
 # --- coding:utf-8 ---
 import re
 import requests
-import json
 import operator
 
 headers = {
