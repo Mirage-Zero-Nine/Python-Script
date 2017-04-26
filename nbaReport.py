@@ -38,3 +38,6 @@ def espnNBA():
         str(match_player_score[n + 1])))
         n += 2
         m += 2
+
+if __name__ == '__main__':
+    espnNBA()
