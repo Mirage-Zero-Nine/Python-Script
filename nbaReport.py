@@ -34,9 +34,7 @@ def espnNBA():
     m = 1
     for i in match_game:
         match_team = re.findall(r'\w+ \d+', str(i))
-        print('%s : %s\nHome Team: %s\nWinner High: %s\nLoser High: %s\n' % (
-        str(match_team[0]), str(match_team[1]), str(home[m]), str(match_player_score[n]),
-        str(match_player_score[n + 1])))
+        print('%s : %s\nHome Team: %s\nWinner High: %s\nLoser High: %s\n' % (str(match_team[0]), str(match_team[1]), str(home[m]), str(match_player_score[n]), str(match_player_score[n + 1])))
         n += 2
         m += 2
 
