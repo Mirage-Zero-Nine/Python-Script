@@ -2,7 +2,8 @@ __author__ = 'BorisMirage'
 # --- coding:utf-8 ---
 import re
 import requests
-import operator
+from bs4 import BeautifulSoup
+
 
 def espnNBA():
     headersiPad = {
