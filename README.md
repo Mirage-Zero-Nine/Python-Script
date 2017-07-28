@@ -15,3 +15,5 @@ Scripts that are for Pythonnista for iOS, but also can be used in normal Python 
 ## Others
 
 Can be directly used in Python environment.
+
+**All detailed introduction for scripts can be found in every folder's README.md**
