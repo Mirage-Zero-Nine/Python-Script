@@ -1,4 +1,4 @@
-# Date Calculator (Beta)
+# Date Calculator 
 
 ## Function
 
