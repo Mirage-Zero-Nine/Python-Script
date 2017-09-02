@@ -24,7 +24,7 @@ def currency():
     currencySession = requests.session()
     currencyRespond = currencySession.get('http://apilayer.net/api/live?access_key=8f98bbab6dc62d96b2846c5a9e8e592b').json()['quotes']['USDCNY']
     result = float(sys.argv[1])*currencyRespond
-    print result
+    print '%.2f' % result
 
 if __name__ == '__main__':
     currency()
