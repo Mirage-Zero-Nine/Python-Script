@@ -26,8 +26,11 @@ def currency():
     currencyRespond = currencySession.get('https://finance.yahoo.com/webservice/v1/symbols/allcurrencies/quote')
     root = ElementTree.fromstring(currencyRespond.content)
     node = root.findall('./resources/resource/field') # This line is to find current rate for USD/CNY. Any other rate can be found on this website
-    result = float(node[435])*float(sys.argv[1])
-    print '%.2f' % result
+    if str(node[434].text) != 'USD/CNY':
+        print 'Error!'
+    else:
+        result = float(node[435].text)*float(sys.argv[1])
+        print '%.2f' % result
 
 
 if __name__ == '__main__':
