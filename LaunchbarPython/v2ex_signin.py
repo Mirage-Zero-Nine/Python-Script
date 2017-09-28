@@ -9,8 +9,8 @@ import sys
 import json
 
 def v2ex():
-    v2ex_username = 'borismirage00@gmail.com'
-    v2ex_password = 'P59-zgC-Z5e-cqe'
+    v2ex_username = 'Username'
+    v2ex_password = 'Password'
     headers = {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.1 Safari/603.1.30',
         'Referer': 'https://www.v2ex.com/signin',
