@@ -6,6 +6,8 @@ import requests
 
 '''
 Work on both Python 2 and Python 3
+
+**Need to import your cookie from browser.**
 '''
 
 
