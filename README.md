@@ -2,18 +2,17 @@
 
 Some tiny tools that is written in Python.
 
-## LaunchBar
+1. LaunchBar
 
-Scripts that are for LaunchBar, but also can be used in normal Python environment with some edition done.
+Scripts written for LaunchBar. 
 
-**Python version that LaunchBar use depend on system Python version.**
+Running on Python 2.7 due to the default system setting.
 
-## Pythonnista for iOS
+2. Pythonnista for iOS
 
-Scripts that are for Pythonnista for iOS, but also can be used in normal Python environment with some edition done.
+Scripts that are for Pythonnista 3 for iOS. Running on Python 3.6 environment and may contain some spcific package only in Pyhthonista this app.
 
-## Others
+3. Others
 
-Can be directly used in Python environment.
+Can be directly used in Python environment. Mostly, they are tested on Python 3.6 environment.
 
-**All detailed introduction for scripts can be found in every folder's README.md**
