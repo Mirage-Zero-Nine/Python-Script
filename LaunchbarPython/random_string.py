@@ -18,9 +18,15 @@ class random_string(object):
         self.string = base_string
 
     def generate_random(self):
+
+        # Hash string
         hash_string = hashlib.sha224(self.string).hexdigest()
+
+        # Expand string to contain 26 letters, rather than in hash 16.
         code = sha512_crypt.encrypt(hash_string, rounds=5000, salt=str(random.randint(0, 100)))
         code = code[12:21]
+
+        # Copy to clipboard
         process = subprocess.Popen('pbcopy', env={'LANG': 'en_US.UTF-8'}, stdin=subprocess.PIPE)
         process.communicate(code.encode('utf-8'))
         print code
