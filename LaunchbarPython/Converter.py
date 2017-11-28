@@ -57,33 +57,44 @@ class Converter(object):
 
     def converter_function(self):
         if self.scale == 'f':
-            float_Fahrenheit_to_Celsius = (self.number - 32) * 5 / 9
-            float_Fahrenheit_to_Kelvin = float_Fahrenheit_to_Celsius + 273.15
-            print self.number, 'F = ', float_Fahrenheit_to_Celsius, 'C'
-            print self.number, 'F = ', float_Fahrenheit_to_Kelvin, 'K'
+            Fahrenheit_to_Celsius = (self.number - 32) * 5 / 9
+            Fahrenheit_to_Kelvin = Fahrenheit_to_Celsius + 273.15
+            print self.number, 'F = ', Fahrenheit_to_Celsius, 'C'
+            print self.number, 'F = ', Fahrenheit_to_Kelvin, 'K'
         elif self.scale == 'c':
-            float_Celsius_to_Kelvin = self.number + 273.15
-            float_Celsius_to_Fahrenheit = self.number * 9 / 5 + 32
-            print self.number, 'C = ', float_Celsius_to_Fahrenheit, 'F'
-            print self.number, 'C = ', float_Celsius_to_Kelvin, 'K'
+            Celsius_to_Kelvin = self.number + 273.15
+            Celsius_to_Fahrenheit = self.number * 9 / 5 + 32
+            print self.number, 'C = ', Celsius_to_Fahrenheit, 'F'
+            print self.number, 'C = ', Celsius_to_Kelvin, 'K'
         elif self.scale == 'k':
-            float_Kelvin_to_Celsius = self.number - 273.15
-            float_Kelvin_to_Fahrenheit = float_Kelvin_to_Celsius * 9 / 5 + 32
-            print self.number, 'K = ', float_Kelvin_to_Celsius, 'C'
-            print self.number, 'K = ', float_Kelvin_to_Fahrenheit, 'F'
+            Kelvin_to_Celsius = self.number - 273.15
+            Kelvin_to_Fahrenheit = Kelvin_to_Celsius * 9 / 5 + 32
+            print self.number, 'K = ', Kelvin_to_Celsius, 'C'
+            print self.number, 'K = ', Kelvin_to_Fahrenheit, 'F'
         elif self.scale == 'cm':
-            float_cm_to_inch = self.number * 0.393701
-            float_cm_to_feet = self.number * 0.0328084
-            print self.number, 'cm = ', float_cm_to_inch, 'inch'
-            print self.number, 'cm = ', float_cm_to_feet, 'feet'
+            cm_to_inch = self.number * 0.393701
+            cm_to_feet = self.number * 0.0328084
+            print self.number, 'cm = ', cm_to_inch, 'inch'
+            print self.number, 'cm = ', cm_to_feet, 'feet'
         elif self.scale == 'inch':
-            float_inch_to_cm = self.number * 2.54
-            float_inch_to_meter = float_inch_to_cm / 100
-            float_inch_to_feet = self.number / 12
-            print self.number, 'cm = ', float_inch_to_cm, 'cm'
-            print self.number, 'cm = ', float_inch_to_meter, 'meter'
-            print self.number, 'cm = ', float_inch_to_feet, 'feet'
-
+            inch_to_cm = self.number * 2.54
+            inch_to_meter = inch_to_cm / 100
+            inch_to_feet = self.number / 12
+            print self.number, 'cm = ', inch_to_cm, 'cm'
+            print self.number, 'cm = ', inch_to_meter, 'meter'
+            print self.number, 'cm = ', inch_to_feet, 'feet'
+        elif self.scale == 'foot':
+            foot_to_cm = self.number * 30.48
+            foot_to_inch = self.number * 12
+            foot_to_meter = foot_to_cm / 100
+            if self.number == 1:
+                print self.number, 'foot = ', foot_to_cm, 'cm'
+                print self.number, 'foot = ', foot_to_inch, 'inch'
+                print self.number, 'foot = ', foot_to_meter, 'm'
+            else:
+                print self.number, 'feet = ', foot_to_cm, 'cm'
+                print self.number, 'feet = ', foot_to_inch, 'inch'
+                print self.number, 'feet = ', foot_to_meter, 'm'
         else:
             print 'Wrong Scale!'
 
