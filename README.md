@@ -6,7 +6,7 @@ Some tiny tools that is written in Python.
 
   Scripts written for LaunchBar. 
 
-  Running on Python 2.7 due to the default system setting.
+  Running on Python 2.7 based on default system Python version.
 
 - Pythonnista for iOS
 
