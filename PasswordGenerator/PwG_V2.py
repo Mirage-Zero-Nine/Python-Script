@@ -18,7 +18,7 @@ class Password(object):
         new_info = self.__choose_method()
         cache = ''
         salt = hashlib.md5(new_info.encode('utf-8')).hexdigest()[0:16]
-        code = sha512_crypt.encrypt(hashlib.md5(new_info.hexdigest(), rounds=5000, salt=salt)[::-1])
+        code = sha512_crypt.encrypt(hashlib.md5(new_info.encode('utf-8')).hexdigest(), rounds=5000, salt=salt)[::-1]
         length_code = len(code) - 1
         while length_code > 0:
             temp = code[length_code]
@@ -26,19 +26,25 @@ class Password(object):
                 cache += str(temp)
             length_code -= 1
         code = cache[-3:] + '-' + cache[-6:-3] + '-' + cache[-9:-6] + '-' + cache[-12:-9]
-        return code
-
-    def __write_to_clipboard(self, string):
         if os.name == 'posix':
             process = subprocess.Popen('pbcopy', env={'LANG': 'en_US.UTF-8'}, stdin=subprocess.PIPE)
-            process.communicate(string.encode('utf-8'))
+            process.communicate(code.encode('utf-8'))
         elif os.name == 'nt':
-            command = 'echo' + string.strip() + '| clip'
+            command = 'echo' + code.strip() + '| clip'
             os.system(command)
+        return code
+
+    # def __write_to_clipboard(self, string):
+    #     if os.name == 'posix':
+    #         process = subprocess.Popen('pbcopy', env={'LANG': 'en_US.UTF-8'}, stdin=subprocess.PIPE)
+    #         process.communicate(string.encode('utf-8'))
+    #     elif os.name == 'nt':
+    #         command = 'echo' + string.strip() + '| clip'
+    #         os.system(command)
 
     def generate(self):
         self.__encrypt()
-        self.__write_to_clipboard()
+
 
 if __name__ == '__main__':
     Password().generate()
