@@ -26,6 +26,8 @@ def parameter_fliter():
             string_input = string_input + str(argument)[i]
         elif str(argument)[i].isalpha():
             string_scale = string_scale + str(argument)[i]
+        elif str(argument)[i] == 'e':
+            string_scale = string_scale + str(argument)[i]
         elif str(sys.argv[1])[i] == '.':
             string_input = string_input + str(argument)[i]
         i += 1
@@ -41,7 +43,7 @@ class Converter(object):
     def find_function(self):
 
         __temperature_measure = ['f', 'c', 'k']
-        __length_measure = ['cm', 'inch', 'foot', 'feet', 'mile', 'm', 'yard', 'yd']
+        __length_measure = ['cm', 'inch', 'foot', 'feet', 'mile', 'm', 'yard', 'yd', 'km', 'mil']
         __weight_list = ['pound', 'oz', 'kg', 'lb', 'g']
         __volume_list = ['gallon', 'gal', 'ml', 'l']
 
@@ -103,9 +105,9 @@ class Converter(object):
                 print self.number, 'feet = ', foot_to_inch, 'inch'
                 print self.number, 'feet = ', foot_to_meter, 'm'
                 print self.number, 'feet = ', foot_to_mile, 'mile'
-        elif self.scale == 'mile':
-            mile_to_km = length_list[1] * 1.60934
-            print self.scale, 'miles = ', mile_to_km, 'km'
+        elif self.scale == 'mile' or self.scale == 'mil':
+            mile_to_km = self.number * 1.60934
+            print self.number, 'miles = ', mile_to_km, 'km'
         elif self.scale == 'm':
             m_to_mile = self.number * 0.000621371
             print self.number, 'm = ', m_to_mile, 'mile'
