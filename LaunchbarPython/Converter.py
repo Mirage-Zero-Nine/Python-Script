@@ -16,7 +16,7 @@ import sys
 '''
 
 
-def parameter_fliter():
+def parameter_filter():
     i = 0
     string_input = ''
     string_scale = ''
@@ -149,5 +149,5 @@ class Converter(object):
 
 
 if __name__ == '__main__':
-    list_para = parameter_fliter()
+    list_para = parameter_filter()
     Converter(list_para[0], list_para[1]).find_function()
