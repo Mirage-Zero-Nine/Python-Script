@@ -4,10 +4,8 @@
 # LaunchBar Action Script
 #
 import sys
-import json
 import re
 import requests
-import platform
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -76,7 +74,7 @@ def express():
         content = getResult['data'][i]['context'].encode('utf-8')
         print(time + content)
         i += 1
-        
+
         # post https://www.kuaidi100.com/autonumber/autoComNum?text=
         # expressRespond = sessionExpress.get('https://www.kuaidi100.com/query?type=shunfeng&postid=').json()
         # expressRespond = json.dumps(expressRespond, ensure_ascii=False, indent=4)
