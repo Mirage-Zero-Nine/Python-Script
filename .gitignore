@@ -1,7 +1,6 @@
 venv/
 .idea/
 .git/
-PythonistaScript/Library_Hours.py
 
 Pythonista_Script/Library_Hours.py
 Launchbar_Python/Weather.py
